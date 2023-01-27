@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Articles for {{ year }}{% endblock %}
+
+{% block content %}
+<h1 style="color:darkgreen;">Articles for {{ year }}</h1>
+
+
+
+<hr>
+{% for article in article_list %}
+    <h1 style="
+    color:block;">{{ article.headline }}</h1>
+    <p>By {{ article.reporter.full_name }}</p>
+    <p>Published {{ article.pub_date }}</p>
+    <h1>content:</h1>
+    <p>{{ article.content}}</p>
+    <hr>
+{% endfor %}
+{% endblock %}
